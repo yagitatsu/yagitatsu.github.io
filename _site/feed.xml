@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-22T00:03:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">yagitatsu blog</title><subtitle>結構簡単につくれた。エンジニアの日記。</subtitle><entry><title type="html">SLAとSLO</title><link href="http://localhost:4000/tech/2019/02/21/sla.html" rel="alternate" type="text/html" title="SLAとSLO" /><published>2019-02-21T23:30:00+09:00</published><updated>2019-02-21T23:30:00+09:00</updated><id>http://localhost:4000/tech/2019/02/21/sla</id><content type="html" xml:base="http://localhost:4000/tech/2019/02/21/sla.html">&lt;p&gt;所属するチームでは「稼働率」をサービスの品質のKPIの1つとして運用しようとしている。
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-22T00:24:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">yagitatsu blog</title><subtitle>結構簡単につくれた。エンジニアの日記。</subtitle><entry><title type="html">SLAとSLO</title><link href="http://localhost:4000/tech/2019/02/21/sla.html" rel="alternate" type="text/html" title="SLAとSLO" /><published>2019-02-21T23:30:00+09:00</published><updated>2019-02-21T23:30:00+09:00</updated><id>http://localhost:4000/tech/2019/02/21/sla</id><content type="html" xml:base="http://localhost:4000/tech/2019/02/21/sla.html">&lt;p&gt;所属するチームでは「稼働率」をサービスの品質のKPIの1つとして運用しようとしている。
 SLOと言うらしい。書いても大丈夫かな、と一応ググったらすでにブログが書かれていた。はやっ。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://tech.mercari.com/entry/2018/12/25/150405&quot;&gt;Mercari Tech Blog&lt;/a&gt;&lt;/p&gt;
@@ -30,7 +30,7 @@ SLOと言うらしい。書いても大丈夫かな、と一応ググったら�
 
 &lt;p&gt;と、だいぶ違って面白い。比較するのもナンセンスなのかな、と考えさせられる。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;Datadog&lt;/a&gt;で簡単にそれっぽい指標が出せているようなので、やり方を調べてみてばぶメモにも入れてみようかな、と思っている。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;Datadog&lt;/a&gt;で簡単にそれっぽい指標が出せているようなので、やり方を調べてみて&lt;a href=&quot;https://babumemo.com/&quot;&gt;ばぶメモ&lt;/a&gt;にも入れてみようかな、と思っている。&lt;/p&gt;
 
 &lt;p&gt;でも、まだ例えば99.9%が目標として適当なのか、というのがいまいちピンときていない。
 比較のために、例えばみずほ銀行のATMのSLOを考えてみると、&lt;/p&gt;
