@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-21T23:18:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">yagitatsu blog</title><subtitle>結構簡単につくれた。エンジニアの日記。</subtitle><entry><title type="html">hello world!</title><link href="http://localhost:4000/hello/2019/02/21/hello-world.html" rel="alternate" type="text/html" title="hello world!" /><published>2019-02-21T22:32:10+09:00</published><updated>2019-02-21T22:32:10+09:00</updated><id>http://localhost:4000/hello/2019/02/21/hello-world</id><content type="html" xml:base="http://localhost:4000/hello/2019/02/21/hello-world.html">&lt;p&gt;簡単に作れた。ちょうど100000歳の誕生日でした。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-22T00:03:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">yagitatsu blog</title><subtitle>結構簡単につくれた。エンジニアの日記。</subtitle><entry><title type="html">SLAとSLO</title><link href="http://localhost:4000/tech/2019/02/21/sla.html" rel="alternate" type="text/html" title="SLAとSLO" /><published>2019-02-21T23:30:00+09:00</published><updated>2019-02-21T23:30:00+09:00</updated><id>http://localhost:4000/tech/2019/02/21/sla</id><content type="html" xml:base="http://localhost:4000/tech/2019/02/21/sla.html">&lt;p&gt;所属するチームでは「稼働率」をサービスの品質のKPIの1つとして運用しようとしている。
+SLOと言うらしい。書いても大丈夫かな、と一応ググったらすでにブログが書かれていた。はやっ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tech.mercari.com/entry/2018/12/25/150405&quot;&gt;Mercari Tech Blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;GCPやAWSでは、SLAという、外部に対してコミットするサービスレベルを定義していて、
+例えばSLOが99%きっていたらn割返金します、と宣言していたりする。
+データベースのプロダクトの例だとこんなかんじ。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/spanner/sla&quot;&gt;Spanner (GCPのDatabase Product) の場合&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://d1.awsstatic.com/legal/amazonrdsservice/Amazon%20RDS%20Service%20Leve%20%20Agreement_jp.pdf&quot;&gt;Amazon RDS (Amazon Relational Database) の場合&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これを見ると、SpannerのSLOは99.99%、Amazon RDSは99.95%とある。
+1ヶ月のうちの割合だから、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spanner: (100%-99.99%)&lt;em&gt;30日&lt;/em&gt;24時間*60分 = 4.32分&lt;/li&gt;
+  &lt;li&gt;Amazon RDS: (100%-99.95%)&lt;em&gt;30日&lt;/em&gt;24時間*60分 = 21.6分&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これくらいの時間、「ダウンタイム」があってもOK、という温度感。
+「ダウンタイム」の基準も、それぞれ違って&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spanner: エラー率が5%以上&lt;/li&gt;
+  &lt;li&gt;Amazon RDS: あらゆるリクエストが1分間返ってこない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;と、だいぶ違って面白い。比較するのもナンセンスなのかな、と考えさせられる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;Datadog&lt;/a&gt;で簡単にそれっぽい指標が出せているようなので、やり方を調べてみてばぶメモにも入れてみようかな、と思っている。&lt;/p&gt;
+
+&lt;p&gt;でも、まだ例えば99.9%が目標として適当なのか、というのがいまいちピンときていない。
+比較のために、例えばみずほ銀行のATMのSLOを考えてみると、&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://venture-finance.jp/archives/7737&quot;&gt;みずほ銀行ATMのスケジュール&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これによれば毎月2日くらい完全に止まっている。止まっている時間=ダウンタイムでちょうど2日とすると&lt;/p&gt;
+
+&lt;p&gt;(30-2)/30 = 93%&lt;/p&gt;
+
+&lt;p&gt;あーいうても90%以上なんだ、高いな、と思ってしまったw
+でも、インターネットではだいぶいじられているから、93%だと低い。
+少なくとも93%を下回ったらみずほ銀行ATMより止まってるサービスなんだな、と思うとわかりやすくて面白い。&lt;/p&gt;</content><author><name></name></author><summary type="html">所属するチームでは「稼働率」をサービスの品質のKPIの1つとして運用しようとしている。 SLOと言うらしい。書いても大丈夫かな、と一応ググったらすでにブログが書かれていた。はやっ。</summary></entry><entry><title type="html">hello world!</title><link href="http://localhost:4000/hello/2019/02/21/hello-world.html" rel="alternate" type="text/html" title="hello world!" /><published>2019-02-21T22:32:10+09:00</published><updated>2019-02-21T22:32:10+09:00</updated><id>http://localhost:4000/hello/2019/02/21/hello-world</id><content type="html" xml:base="http://localhost:4000/hello/2019/02/21/hello-world.html">&lt;p&gt;簡単に作れた。ちょうど100000歳の誕生日でした。&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-golang&quot; data-lang=&quot;golang&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 
