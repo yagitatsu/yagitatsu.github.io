@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "健康保険の扶養者を変更する方法"
+title:  "子どもの健康保険の扶養者を変更する方法"
 date:   2019-09-27 23:00:00 +0900
 categories: insurance
 ---
